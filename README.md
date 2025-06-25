@@ -13,26 +13,23 @@ Open Api를 활용한 영화 관련 프로젝트 입니다.
 
 ## 📑 요약
 ### 1. **주제**
-   - '풀무원' 브랜드 웹사이트 리뉴얼
+   - Open Api를 활용한 영화 정보 제공
      
 ### 2. **목표**
-   - 중복되는 컨텐츠 정리 및 전체 비율 수정 등으로 사용자 만족도 향상 
+   - 영화, TV 관련 정보 제공 등으로 사용자 정보 제공 
      
 ### 3. **개발 환경**
-   - HTML, SCSS
+   - REACT, CSS
      
 ### 4. **기간 및 인원**
-   - 2025.01.23 ~ 2025.02.26 (35일), 4인
+   - 2023.03.10 - 2023.03.17 , 1인
 
 
 
 ## 🙌 담당 직무
-| 이름   | GitHub                              | 직무              |해당 |
-|:--------:|:---------------------------------------:|:-------------------:|:----:|
-| 김도연 | [doyeon](https://github.com/dododoodo) | 팀장 |     |
-| **여태경** | [taekyung](https://github.com/ytk27) | 개발 |      |
-| 천지호 | [jiho](https://github.com/jiho8) | 디자인 |    |
-| 황수빈 | [subin](https://github.com/subin75) | 기획 |  ✔      |
+| 이름   |해당 |
+|:--------:|:----:|
+| 황수빈 |  ✔   |
 
 
 
@@ -109,49 +106,14 @@ Open Api를 활용한 영화 관련 프로젝트 입니다.
 | **웹 브라우저**      | Chrome                                                 | ![Google Chrome](https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white) |`
 | **마크업 언어**      | HTML5                                               | ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 | **스크립트 언어**      | JavaScript                                               | ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-| **스타일링**      | SASS,CSS                                                 | ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) |`
+| **스타일링**      | CSS                                                 | ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) |`
 | **라이브러리**      | jQuery                                             |![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white) |`
-| **디자인/프로토타입**      | Figma         |![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white) |`
 | **배포**          | GitHub                                               | ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)|`
 
-
-## 📚 참고 URL
-- 기획서 : 
-[Pulmuone Google Docs](<https://docs.google.com/presentation/d/e/2PACX-1vR5VPkQ1mR0KS6bb1eYuVnzi95pDo6kexc94bRYxFM4BBCfuYx11tBjU9lqW0g7zikAamNoRTxBID9V/pub?start=false&loop=false&delayms=3000>)
-- 화면 설계 : 
-[Pulmuone Figma](<https://www.figma.com/design/yvRbuH4Q8I5dwRoWZ62oT1/(B%EC%A1%B0)%EC%8A%A4%ED%86%A0%EB%A6%AC%EB%B3%B4%EB%93%9C?node-id=2741-4201&p=f&t=GGYomiavl7cKnkD6-0>)
-- 발표 자료 : 
-[Pulmuone Canva](https://www.canva.com/design/DAGf-bGIHP0/ht3xe4QL4MPhP579NkMXyg/edit)
-- 인터페이스 기능 보고서
-[Pulmuone Interface Report](https://docs.google.com/document/d/1yl6Vbl7dGo8s5foPjOdZ4UqANu66daBIyi4p8QQQ_RA/edit?usp=sharing)
-- 프로젝트 완료 보고서
-[Pulmuone Final report](https://docs.google.com/document/d/1aJEeiRj6KTTmHOR-td0581_aCYqC4mwfAMuKh7tZVO4/edit?usp=sharing)
-
 ---
-# 담당 개발 상세 : 황수빈
+# 개발 상세
 
 ## 📑 요약
-
-- **담당 직무**
-
-   : 기획
-  
-- **담당 페이지**
-
-   : [회사소개_ceo인사말](https://ytk27.github.io/Green-B-Project/company_ceo.html) , [회사소개_히스토리 및 가치](https://ytk27.github.io/Green-B-Project/company_history.html)
-
-- **역할** 
-  #### (1) 기획
-    - google문서를 활용하여 컨텐츠별 문서화작성
- 
-  #### (2) 디자인
-    - figma를 활용하여 담당 페이지 제작
-  
-  #### (3) 초기 개발 환경 세팅
-    - 프로젝트 생성, 폴더구조 설계, 패키지 및 라이브러리 설치등
-
-  #### (4) 개발
-     - 담당 페이지 개발
 
 ## ✏ 역할
 
