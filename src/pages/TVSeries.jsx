@@ -12,58 +12,48 @@ function TVSeries() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [isSearching, setIsSearching] = useState(false);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
-  // 초기 인기 TV 시리즈 불러오기
   useEffect(() => {
-    const fetchPopularTV = async () => {
-      try {
-        setLoading(true);
-        const res = await axios.get(
-          `${BASE_URL}/tv/popular?api_key=${API_KEY}&language=ko-KR`
-        );
-        setTvSeries(res.data.results);
-        setIsSearching(false);
-      } catch (error) {
-        console.error('TV 시리즈 데이터를 불러오는 중 오류 발생:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchPopularTV();
+    // 초기 인기 TV 시리즈 불러오기 (page 1)
+    fetchTVSeries(1, false, '');
   }, []);
 
-  // 검색 처리 함수
-  const handleSearch = async () => {
-    if (searchTerm.trim() === '') {
-      setIsSearching(false);
-      setLoading(true);
-      try {
-        const res = await axios.get(
-          `${BASE_URL}/tv/popular?api_key=${API_KEY}&language=ko-KR`
-        );
-        setTvSeries(res.data.results);
-      } catch (error) {
-        console.error('TV 시리즈 데이터를 불러오는 중 오류 발생:', error);
-      } finally {
-        setLoading(false);
-      }
-      return;
-    }
-
+  const fetchTVSeries = async (pageNum, isLoadMore, query) => {
+    setLoading(true);
     try {
-      setLoading(true);
-      setIsSearching(true);
-      const res = await axios.get(
-        `${BASE_URL}/search/tv?api_key=${API_KEY}&language=ko-KR&query=${encodeURIComponent(
-          searchTerm
-        )}`
-      );
-      setTvSeries(res.data.results);
+      const url =
+        query.trim() === ''
+          ? `${BASE_URL}/tv/popular?api_key=${API_KEY}&language=ko-KR&page=${pageNum}`
+          : `${BASE_URL}/search/tv?api_key=${API_KEY}&language=ko-KR&query=${encodeURIComponent(
+              query
+            )}&page=${pageNum}`;
+      const res = await axios.get(url);
+
+      if (isLoadMore) {
+        setTvSeries((prev) => [...prev, ...res.data.results]);
+      } else {
+        setTvSeries(res.data.results);
+      }
+
+      setTotalPages(res.data.total_pages);
+      setPage(pageNum);
+      setIsSearching(query.trim() !== '');
     } catch (error) {
-      console.error('검색 중 오류 발생:', error);
+      console.error('TV 시리즈 데이터를 불러오는 중 오류 발생:', error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleSearch = () => {
+    fetchTVSeries(1, false, searchTerm);
+  };
+
+  const handleLoadMore = () => {
+    if (page < totalPages && !loading) {
+      fetchTVSeries(page + 1, true, searchTerm);
     }
   };
 
@@ -86,22 +76,39 @@ function TVSeries() {
         <button onClick={handleSearch}>Search</button>
       </div>
 
-      {loading ? (
+      {loading && page === 1 ? (
         <p style={{ color: 'white' }}>로딩 중...</p>
       ) : tvSeries.length === 0 ? (
-        <p style={{ color: 'white' }}>{isSearching ? '검색 결과가 없습니다.' : 'TV 시리즈가 없습니다.'}</p>
+        <p style={{ color: 'white' }}>
+          {isSearching ? '검색 결과가 없습니다.' : 'TV 시리즈가 없습니다.'}
+        </p>
       ) : (
-        <div className="movie-grid">
-          {tvSeries.map((tv) => (
-            <NavLink to={`/tvdetail/${tv.id}`} key={tv.id} className="movie-card">
-              <img
-                src={tv.poster_path ? `https://image.tmdb.org/t/p/w500${tv.poster_path}` : ''}
-                alt={tv.name}
-              />
-              <p className="moviename">{tv.name}</p>
-            </NavLink>
-          ))}
-        </div>
+        <>
+          <div className="movie-grid">
+            {tvSeries.map((tv) => (
+              <NavLink to={`/tvdetail/${tv.id}`} key={tv.id} className="movie-card">
+                <img
+                  src={tv.poster_path ? `https://image.tmdb.org/t/p/w500${tv.poster_path}` : ''}
+                  alt={tv.name}
+                />
+                <p className="moviename">{tv.name}</p>
+              </NavLink>
+            ))}
+          </div>
+
+          {page < totalPages && (
+            <div style={{ textAlign: 'center', margin: '20px' }}>
+              <button
+                className="load-more-btn"
+                onClick={handleLoadMore}
+                disabled={loading}
+                style={{ padding: '10px 20px', fontSize: '16px' }}
+              >
+                {loading ? '로딩 중...' : '더보기'}
+              </button>
+            </div>
+          )}
+        </>
       )}
     </div>
   );

@@ -1,25 +1,24 @@
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 35px 60px;
   position: absolute;
   top: 0;
   z-index: 10;
   background: transparent;
-  font-family: 'Segoe UI', sans-serif;
 }
-
 .logo {
   font-size: 40px;
   font-weight: bold;
   color: white;
   margin-left: -55px;
   text-decoration: none;
+  margin-right: auto;
 }
 .nav {
   display: flex;
-  margin-right: -1500px;
+  margin-left: 1100px;
 }
 .nav a {
   margin-left: 40px;
@@ -29,7 +28,6 @@
   font-size: 24px;
   position: relative;
 }
-
 .nav a.active::after {
   content: '';
   display: block;

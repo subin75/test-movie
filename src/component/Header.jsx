@@ -5,7 +5,7 @@ import '../Header.css';
 function Header() {
   return (
     <header className="header">
-      <a href="/" className="logo">YFLIX</a>  {/* 여기 href="/"로 바꿈 */}
+      <a href="/" className="logo">YFLIX</a>
       <nav className="nav">
         <NavLink exact to="/" activeClassName="active">Home</NavLink>
         <NavLink to="/movies" className={({ isActive }) => isActive ? "active" : ""}>Movies</NavLink>
