@@ -7,8 +7,8 @@
 Open Api를 활용한 영화정보 제공 프로젝트 입니다.
 
 
-## 🔗 URL
-- <https://test-movie-rose.vercel.app/>
+## 🔗 배포 URL
+<https://test-movie-rose.vercel.app/>
 
 
 ## 📑 요약
