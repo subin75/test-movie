@@ -7,9 +7,15 @@ function Header() {
     <header className="header">
       <a href="/" className="logo">YFLIX</a>
       <nav className="nav">
-        <NavLink exact to="/" activeClassName="active">Home</NavLink>
-        <NavLink to="/movies" className={({ isActive }) => isActive ? "active" : ""}>Movies</NavLink>
-        <NavLink to="/tv" className={({ isActive }) => (isActive ? 'active' : undefined)}>TV Series</NavLink>
+        <NavLink exact="true" to="/" className={({ isActive }) => isActive ? 'active' : ''}>
+          Home
+        </NavLink>
+        <NavLink to="/movies" className={({ isActive }) => isActive ? 'active' : ''}>
+          Movies
+        </NavLink>
+        <NavLink to="/tv" className={({ isActive }) => isActive ? 'active' : ''}>
+          TV Series
+        </NavLink>
       </nav>
     </header>
   );
