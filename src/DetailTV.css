@@ -1,0 +1,94 @@
+.detail-page {
+    background-color: #111;
+    color: #eee;
+    min-height: 100vh;
+    padding: 20px;
+    .detail-container {
+        display: flex;
+        gap: 30px;
+        max-width: 960px;
+        margin: 0 auto;
+        .poster {
+            flex-shrink: 0;
+            width: 300px;
+            img {
+                width: 100%;
+                border-radius: 10px;
+                box-shadow: 0 0 20px rgba(0,0,0,0.7);
+            }
+        }
+        .info {
+            flex-grow: 1;
+            .name {
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+            .genres {
+                margin-bottom: 15px;
+                .genre-tag {
+                    background-color: #444;
+                    color: #fff;
+                    border-radius: 20px;
+                    padding: 5px 15px;
+                    margin-right: 8px;
+                    font-size: 0.9rem;
+                    user-select: none;
+                }
+            }
+            .overview {
+                font-size: 1.1rem;
+                line-height: 1.5;
+                margin-bottom: 25px;
+            }
+            h2 {
+                margin-bottom: 15px;
+            }
+            .cast-list {
+                display: flex;
+                gap: 15px;
+                .cast-item {
+                    width: 120px;
+                    text-align: center;
+                    img {
+                        width: 100%;
+                        border-radius: 10px;
+                        margin-bottom: 8px;
+                        object-fit: cover;
+                    }
+                    p {
+                        font-size: 12px;
+                        font-weight: 500;
+                        color: #ddd;
+                    }
+                }
+            }
+        }
+    }
+    .trailer-full {
+        max-width: 960px;
+        margin: 40px auto 0;
+        h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #fff;
+            text-align: center;
+        }
+    .trailer-video {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    }
+}
+}

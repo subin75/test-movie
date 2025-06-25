@@ -36,93 +36,222 @@
     transform: rotate(360deg);
   }
 }
-
-body{
-  background-color: black;
+.home {
+  background-color: #000;
+  color: white;
+  padding: 40px;
+  font-family: sans-serif;
 }
-
-header{
-  text-align: right;
-  margin-right: 30px;
-  margin-top: 50px;
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 150px 40px;
+  border-radius: 20px;
+  margin-bottom: 40px;
 }
-.nav-link {
-  font-size: 30px;
-  margin:  20px 20px;
+.hero-content {
+  max-width: 50%;
+}
+.hero-content h1 {
+  font-size: 80px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.hero-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+.hero-buttons button {
+  padding: 12px 24px;
+  margin-right: 16px;
+  font-size: 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.watch-now {
+  background-color: #e50914;
+  color: white;
+  border: none;
+}
+.watch-trailer {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+.hero-poster img {
+  width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+.trailer-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.trailer-content {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  background: black;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 30px solid #0f0f0f;
+  box-sizing: border-box; 
+}
+.trailer-content iframe {
+  width: 100%;
+  height: 100%;
+}
+.close-btn {
+  position: absolute;
+  top: 144px;
+  right: 400px;
+  font-size: 32px;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+.main-slide-container {
+  padding: 32px;
+  color: white;
+}
+.main-slide-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.main-slide-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
+.view-more-btn {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.main-slide-swiper {
+  padding-bottom: 40px;
+}
+.slide-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-decoration: none;
   color: white;
 }
-.nav-link:hover {
-  border-bottom: 3px solid red; /* 마우스를 올렸을 때 빨간색 하단선 */
-  color: red;;
+.slide-item img {
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
-.spot h2{
-  font-size: 80px;
-  color: white;
-  margin-left: 50px;
+.slide-item img:hover {
+  transform: scale(1.05);
 }
-div > p{
-  display: flex;
-  flex-direction: column; /* 이미지 위, 텍스트 아래 */
+.slide-title {
+  margin-top: 12px;
+  font-size: 19px;
+  font-weight: 700;
   text-align: center;
-  min-width: 150px;
-  color: white;
-  margin-left: 50px;
 }
-div > img{
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+  display: none;
+}
+.movies-page {
+  padding: 30px;
+  color: white;
+}
+.search-bar {
   display: flex;
+  gap: 10px;
+  margin-bottom: 50px;
+  margin-top: 100px;
 }
-.spot p {
-  text-align: left; /* 본문 왼쪽 정렬 */
-  font-size: 20px;
+.search-bar input {
+  padding: 8px;
+  width: 200px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #444;
+  color: #ccc;
+  font-size: 14px;
 }
-.spot button{
-  font-size: 30px;
-  padding: 10px 40px; /* 버튼 내부 여백 */
-  border-radius: 20px; /* 둥근 버튼 */
-  border: 5px solid white;
+.search-bar input::placeholder {
+  color: #555;
+}
+.search-bar input:focus {
+  outline: none;
+  border-bottom-color: #f44336; 
+}
+.search-bar button {
+  padding: 8px 16px;
+  cursor: pointer;
+  background-color: #f44336; 
+  border: none;
+  border-radius: 20px;
   color: white;
-  background-color: black;
-  margin-left: 50px;
-  margin-top: 40px;
-  margin-bottom: 200px;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 0 12px #f44336;
+  transition: background-color 0.3s ease;
 }
-.spot button:hover{
-  background-color: white;
-  color: red;
+.search-bar button:hover {
+  background-color: #d32f2f;
+  box-shadow: 0 0 20px #d32f2f;
 }
-.title{
-  font-size: 50px
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 24px;
 }
-
-div button:first-child{
-  background-color: red;
+.movie-card {
+  text-decoration: none;
   color: white;
-  border: 2px solid red;
 }
-div > h2 > button{
-  float: right;
-  font-size: 22px;
-  padding: 5px 20px; /* 버튼 내부 여백 */
-  border-radius: 50px; /* 둥근 버튼 */
-  border: 2px solid white; /* 기본 테두리 제거 */
-  background-color: black; /* 버튼 배경색 (원하는 색상으로 변경 가능) */
-  color: white; /* 글자 색상 */
-  cursor: pointer; /* 마우스 올렸을 때 클릭 가능하도록 변경 */
-  transition: background 0.3s ease;
+.movie-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
-
-div > h2 > button:hover {
-  background-color: white; /* 마우스를 올렸을 때 색 변경 */
-  color: red;
+.movie-card img:hover {
+  transform: scale(1.05);
 }
-
-
-.mainname h2{
-  font-size: 35px;
+.moviename{
+  font-size: 18px;
+}
+.load-more-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 25px;
+  font-size: 16px;
+  background-color: #ff6f61;
   color: white;
-  margin-left: 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-.mySwiper .swiper-pagination {
-  display: none; /* 하단 바 숨기기 */
+.load-more-btn:hover {
+  background-color: #ff3b2f;
 }

@@ -1,47 +1,56 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { NavLink, useNavigate } from 'react-router-dom';
 
-function MainSlide({title,data,type}) {
-    
-    
+function MainSlide({ title, data, type }) {
+  const navigate = useNavigate();
+
+  const handleViewMore = () => {
+    if (type === 'movie') {
+      navigate('/movies');
+    } else if (type === 'tv') {
+      navigate('/tv');
+    }
+  };
+
   return (
-    <div className="mainname">
-        <h2>
-            {title}
-            <button>view more</button>
-        </h2>
+    <div className="main-slide-container">
+      <div className="main-slide-header">
+        <h2>{title}</h2>
+        <button className="view-more-btn" onClick={handleViewMore}>
+          view more
+        </button>
+      </div>
 
-        <Swiper
+      <Swiper
         slidesPerView={6}
-        spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
+        spaceBetween={24}
+        pagination={{ clickable: true }}
         modules={[Pagination]}
-        className="mySwiper"
+        className="main-slide-swiper"
       >
-        {
-            data.map((item)=>
-                <SwiperSlide key={item.id}>
-                    <p> 
-                        <img src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} />
-                        {type=='movie'? item.title : item.name} 
-                    </p>
-                </SwiperSlide>
-            )
-        }   
-
-        
-        
+        {data.map((item) => (
+          <SwiperSlide key={item.id}>
+            <NavLink
+              to={type === 'tv' ? `/tvdetail/${item.id}` : `/detail/${item.id}`}
+              className="slide-item"
+            >
+              <img
+                src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+                alt={type === 'movie' ? item.title : item.name}
+              />
+              <div className="slide-title">
+                {type === 'movie' ? item.title : item.name}
+              </div>
+            </NavLink>
+          </SwiperSlide>
+        ))}
       </Swiper>
-
-         
     </div>
-  )
+  );
 }
 
-export default MainSlide
+export default MainSlide;
