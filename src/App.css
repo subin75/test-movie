@@ -115,8 +115,8 @@
 }
 .close-btn {
   position: absolute;
-  top: -50px;
-  right: 0;
+  top: 10px;
+  right: 10px;    
   font-size: 32px;
   color: white;
   background: transparent;
