@@ -4,10 +4,7 @@
 
 
 ## 🥬 소개
-기존의 **풀무원** 사이트를 리디자인 및 재구성한 리뉴얼 프로젝트입니다.
-
-![KakaoTalk_20250225_124157692_01](https://github.com/user-attachments/assets/266a00cb-5bff-4218-8115-173057fd74ca)
-
+Open Api를 활용한 영화 관련 프로젝트 입니다.
 
 
 ## 🔗 URL
