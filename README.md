@@ -39,6 +39,7 @@ Open Api를 활용한 영화정보 제공 프로젝트 입니다.
 ### 2.Movies, TV Series
    - 상세정보 제공
    - Similar 정보 제공
+   - 검색기능
 
 
 
